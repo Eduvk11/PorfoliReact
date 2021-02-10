@@ -1,40 +1,37 @@
 import React from 'react';
-import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 
 // IMPORTAR COMPONENTES
-import MiComponente from './components/MiComponente';
 
-function holaMundo(nombre, edad) {
-  var presentacion = (
-    <div>
-      <h2>Hola, soy {nombre}</h2>
-      <h3>Tengo {edad} años</h3>
-    </div>);
+import Header from './components/Header';
+import Slider from './components/Slider';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+import SeccionPruebas from './components/SeccionPruebas';
 
-  return presentacion;
-}
+
+
 
 function App() {
-
-  var nombre = 'Eduardo Torres';
+  var buttonString = "Ir al blog";
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hola bienvenido al porfolio React de Eduardo Torres !!
-    </p>
-        {holaMundo(nombre, 39)}
-        <section className="componentes">
-          <MiComponente />
+      <Header />
 
-        </section>
-      </header>
+      <Slider
+        title="Bienvenido al porfolio de Eduardo Torres con React"
+        btn={buttonString}
+      />
 
+      <div className='center'>
+        <SeccionPruebas />
 
-    </div>
+        <Sidebar />
+        <div className="clearfix"></div>
+      </div>
+      <Footer />
+    </div >
   );
 }
 
