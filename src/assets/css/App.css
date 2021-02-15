@@ -92,6 +92,10 @@ body {
   color: #3cb2d3
 }
 
+.active{
+  border-bottom: 2px solid #3cb2d3;
+}
+
 #slider {
   height: 350px;
   width: 100%;
@@ -287,6 +291,7 @@ textarea {
 .article-item .image-wrap img {
   height: 100%;
   text-align: center;
+  width: 130px;
 }
 
 .article-item h2 {

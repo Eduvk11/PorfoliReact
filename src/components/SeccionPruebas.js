@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // IMPORTAR COMPONENTES 
 import MiComponente from './MiComponente';
-import Peliculas from './Peliculas';
+
 
 class SeccionPruebas extends Component {
 
@@ -59,7 +59,7 @@ class SeccionPruebas extends Component {
                 <section className="componentes">
 
                     <MiComponente />
-                    <Peliculas />
+                    <MiComponente />
 
                 </section>
 
