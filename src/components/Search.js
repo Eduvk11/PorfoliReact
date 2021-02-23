@@ -6,19 +6,22 @@ import Sidebar from './Sidebar';
 import Slider from './Slider';
 import Articles from './Articles';
 
-class Blog extends Component {
+class Search extends Component {
     render() {
+        var searched = this.props.match.params.search;
 
         return (
             <div id='blog' className="slider-small" >
                 <Slider
-                    title="Blog"
+                    title={"Busqueda: " + searched}
                     size="slider-small"
                 />
                 <div className='center'>
                     <div id='content'>
                         {/* LISTADO DE ARTICULOS QUE VENDRAN DE LA API RES DE NODE */}
-                        <Articles />
+                        <Articles
+                            search={searched}
+                        />
                     </div>
                     <Sidebar
                         blog="true"
@@ -29,4 +32,4 @@ class Blog extends Component {
     }
 }
 
-export default Blog;
+export default Search;

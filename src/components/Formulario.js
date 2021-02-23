@@ -12,23 +12,30 @@ class Formulario extends Component {
     bioRef = React.createRef();
     generoHombreRef = React.createRef();
     generoMujerRef = React.createRef();
-    generoOtrorRef = React.createRef();
+    generoOtroRef = React.createRef();
 
     state = {
         user: {}
     };
 
     recibirFormulario = (e) => {
+
         e.preventDefault();
 
-        var genero = 'hombre';
+        console.log('Formulario enviado ¡¡');
+        console.log(this.state.user);
+    };
+
+    mostrarDatos = () => {
+
+        var genero = 'Hombre';
 
         if (this.generoHombreRef.current.checked) {
             genero = this.generoHombreRef.current.value;
         } else if (this.generoMujerRef.current.checked) {
             genero = this.generoMujerRef.current.value;
         } else {
-            genero = this.generoOtrorRef.current.value;
+            genero = this.generoOtroRef.current.value;
         }
 
         var user = {
@@ -42,11 +49,8 @@ class Formulario extends Component {
         this.setState({
             user: user
         });
+    };
 
-        console.log('Formulario enviado ¡¡');
-        console.log(user);
-
-    }
     render() {
 
         if (this.state.user.nombre) {
@@ -59,6 +63,7 @@ class Formulario extends Component {
                     <div className="center">
                         <div id="content">
                             <h1 className="subheader">Formulario</h1>
+
                             {/* Mostrar datos del formulario */}
                             {this.state.user.nombre &&
                                 <div id="user-data">
@@ -72,7 +77,7 @@ class Formulario extends Component {
 
 
                             {/* Crear formulario */}
-                            <form className="mid-form" onSubmit={this.recibirFormulario}>
+                            <form className="mid-form" onSubmit={this.recibirFormulario} onChange={this.mostrarDatos}>
                                 <div className="form-grup">
                                     <label htmlFor="nombre">Nombre</label>
                                     <input type="text" name="nombre" ref={this.nombreRef} />

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // CCOMPONENTES
 import Slider from './Slider';
 import Sidebar from './Sidebar';
+import Articles from './Articles';
 
 class Home extends Component {
 
@@ -18,6 +19,9 @@ class Home extends Component {
                 <div className='center'>
                     <div id='content'>
                         <h1 className='subheader'>Últimos árticulos</h1>
+                        <Articles
+                            home='true'
+                        />
                     </div>
                     <Sidebar />
                 </div>

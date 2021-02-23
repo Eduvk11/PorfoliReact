@@ -1,7 +1,14 @@
+// CORE
 import React, { Component } from 'react';
+// COMPONENTES
 import Pelicula from './Pelicula';
 import Slider from './Slider';
 import Sidebar from './Sidebar';
+// IMAGENES
+import Batman from '../assets/images/Batman.jpg';
+import Spiderman from '../assets/images/Spiderman.jpeg';
+import vengadores from '../assets/images/vengadores.jpg';
+import WonderWoman from '../assets/images/WonderWoman.jpg';
 
 
 class Peliculas extends Component {
