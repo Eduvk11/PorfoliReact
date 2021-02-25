@@ -1,6 +1,6 @@
 // CORE
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 import Global from '../Global';
 import Moment from 'react-moment';
@@ -107,7 +107,7 @@ class Article extends Component {
                             <p>
                                 {article.content}
                             </p>
-                            <button className="btn btn-warning">Editar</button>
+                            <Link to={'/blog/editar/' + article._id} className="btn btn-warning">Editar</Link>
                             <button onClick={() => { this.deleteArticle(article._id) }} className="btn btn-danger">Borrar</button>
 
                             <div className="clearfix"></div>
