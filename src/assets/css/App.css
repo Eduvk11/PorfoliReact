@@ -15,7 +15,7 @@ body {
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
-  border-top: 5px solid #61dafb;
+  border-top: 5px solid #df2d0e;
 }
 
 .center {
@@ -41,16 +41,24 @@ body {
   height: 60px;
   margin-right: -10px;
   margin-top: -3px;
-  animation: girar infinite 30s linear;
+  animation: latir infinite 2.5s linear;
 }
 
-@keyframes girar {
-  from {
-    transform: rotate(0deg);
+@keyframes latir {
+  0% {
+    transform: scale(1, 1);
   }
 
-  to {
-    transform: rotate(360deg);
+  33% {
+    transform: scale(1.02, 1.02);
+  }
+
+  66% {
+    transform: scale(0.95, 0.95);
+  }
+
+  100% {
+    transform: scale(1, 1);
   }
 }
 
@@ -88,12 +96,27 @@ body {
   transition: 300ms all;
 }
 
-#menu a:hover {
-  color: #3cb2d3
+#menu a:hover,
+.active {
+  color: #df2d0e !important;
 }
 
-.active{
-  border-bottom: 2px solid #3cb2d3;
+.year-green {
+  display: block;
+  background: green;
+  color: white;
+  padding: 5px;
+  width: 121px;
+  text-align: center;
+}
+
+.year-red {
+  display: block;
+  background: red;
+  color: white;
+  padding: 5px;
+  width: 121px;
+  text-align: center;
 }
 
 #slider {
@@ -104,14 +127,14 @@ body {
   text-shadow: 0px 0px 5px #444;
 
   /*DEGRADADO CSS*/
-  background: rgba(73, 155, 234, 1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(73, 155, 234, 1) 0%, rgba(81, 175, 247, 1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(73, 155, 234, 1)), color-stop(100%, rgba(81, 175, 247, 1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(73, 155, 234, 1) 0%, rgba(81, 175, 247, 1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(73, 155, 234, 1) 0%, rgba(81, 175, 247, 1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(73, 155, 234, 1) 0%, rgba(81, 175, 247, 1) 100%);
-  background: radial-gradient(ellipse at center, rgba(73, 155, 234, 1) 0%, rgba(81, 175, 247, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#499bea', endColorstr='#51aff7', GradientType=1);
+  background: rgba(248, 80, 50, 1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 0%, rgba(230, 31, 5, 1) 71%, rgba(231, 56, 39, 1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(248, 80, 50, 1)), color-stop(0%, rgba(241, 111, 92, 1)), color-stop(71%, rgba(230, 31, 5, 1)), color-stop(100%, rgba(231, 56, 39, 1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 0%, rgba(230, 31, 5, 1) 71%, rgba(231, 56, 39, 1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 0%, rgba(230, 31, 5, 1) 71%, rgba(231, 56, 39, 1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 0%, rgba(230, 31, 5, 1) 71%, rgba(231, 56, 39, 1) 100%);
+  background: radial-gradient(ellipse at center, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 0%, rgba(230, 31, 5, 1) 71%, rgba(231, 56, 39, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f85032', endColorstr='#e73827', GradientType=1);
 }
 
 #slider h1 {
@@ -200,6 +223,8 @@ body {
   transition: 300ms all;
   border: none;
   cursor: pointer;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .btn-success {
@@ -209,6 +234,30 @@ body {
 .btn-success:hover {
   background: black;
 }
+
+.btn-warning {
+  background-color: rgba(247, 135, 7, 0.986);
+  color: white !important;
+  text-decoration: none;
+
+}
+
+.btn-danger {
+  background-color: rgb(247, 6, 6);
+  color: white !important;
+  text-decoration: none;
+}
+
+.btn-warning,
+.btn-danger :hover {
+  transition: all 300ms;
+  opacity: 0.8;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
 
 .mid-form {
   width: 60%;
@@ -226,6 +275,7 @@ body {
 }
 
 input[type="text"],
+input[type="file"],
 textarea {
   width: 100%;
   min-height: 30px;
@@ -235,6 +285,15 @@ textarea {
   margin-bottom: 5px;
   transition: 300ms all;
 }
+
+.btn.up_btn.afu-attach-pin {
+  display: block !important;
+  width: 100% !important;
+  max-width: 90% !important;
+  margin-top: 15px;
+}
+
+
 
 input[type="text"]:focus,
 textarea:focus {
@@ -289,9 +348,13 @@ textarea {
 }
 
 .article-item .image-wrap img {
-  height: 100%;
+  height: 195px;
   text-align: center;
-  width: 130px;
+}
+
+.image-thumb {
+  width: 150px;
+
 }
 
 .article-item h2 {
@@ -333,12 +396,14 @@ textarea {
 
 .article-detail .image-wrap img {
   width: 100%;
+  height: 100%;
 }
 
 .article-detail .subheader {
   margin-top: 15px;
   border: none;
 }
+
 
 /*RESPONSIVE*/
 /* Desde la anchura 1068px hasta la anchura 1212px de pantalla*/

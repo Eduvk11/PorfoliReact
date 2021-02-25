@@ -28,7 +28,7 @@ class Articles extends Component {
         if (home === 'true') {
             this.getLastArticles();
 
-        } else if (search && search != null && search !== undefined) {
+        } else if (search && search !== null && search !== undefined) {
 
             this.getArticlesBySearch(search);
 
@@ -84,7 +84,7 @@ class Articles extends Component {
 
             var listArticles = this.state.articles.map((article) => {
                 return (
-                    <article className="article-item" id="article-template">
+                    <article key={article._id} className="article-item" id="article-template">
                         <div className="image-wrap">
                             {
                                 article.image != null ? (

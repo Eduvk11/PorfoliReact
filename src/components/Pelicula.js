@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 class Pelicula extends Component {
     render() {
         const { titulo, image } = this.props.pelicula;
@@ -14,7 +14,7 @@ class Pelicula extends Component {
                 <span className="date">
                     Hace 5 minutos
                 </span>
-                <a href="article.html">Leer más</a>
+                <Link to='/blog'>Leer más</Link>
                 <button onClick={() => { this.props.marcarFavorita(pelicula) }}>
                     Marcar como favorita
                 </button>

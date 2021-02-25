@@ -1,6 +1,6 @@
 // CORE
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './assets/css/App.css';
 import './assets/css/index.css';
 // COMPONENTES
@@ -13,6 +13,8 @@ import Blog from './components/Blog';
 import Peliculas from './components/Peliculas';
 import Formulario from './components/Formulario';
 import Search from './components/Search';
+import Article from './components/Article';
+import CreateArticle from './components/CreateArticle';
 
 
 class Router extends Component {
@@ -33,12 +35,17 @@ class Router extends Component {
                     <Route exact path="/blog/busqueda/:search" component={Search} />
                     <Route exact path="/peliculas" component={Peliculas} />
                     <Route exact path="/formulario" component={Formulario} />
-                    <Route exact path="/blog/articulo/:id" render={() => (
-                        <h1>Pagina individual del articulo</h1>
-                    )} />
-
-
+                    <Route exact path="/blog/articulo/:id" component={Article} />
                     <Route exact path="/segunda-ruta" component={MiComponente} />
+                    <Route exact path="/blog/crear" component={CreateArticle} />
+                    <Route exact path="/redirect/:search" render={
+                        (props) => {
+                            var search = props.match.params.search;
+                            return (
+                                <Redirect to={'/blog/busqueda/' + search} />
+                            );
+                        }
+                    } />
                     <Route exact path="/pagina-1" render={() => (
                         <React.Fragment>
                             <h1>Hola mundo desde la ruta: PAGINA 1</h1>
