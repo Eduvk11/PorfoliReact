@@ -22,8 +22,8 @@ class Formulario extends Component {
 
         e.preventDefault();
 
-        console.log('Formulario enviado ¡¡');
-        console.log(this.state.user);
+       // console.log('Formulario enviado ¡¡');
+       // console.log(this.state.user);
     };
 
     mostrarDatos = () => {

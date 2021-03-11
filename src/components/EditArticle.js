@@ -141,7 +141,7 @@ class EditArticle extends Component {
     }
 
     render() {
-        console.log(this.state.article)
+       // console.log(this.state.article)
 
         if (this.state.status === 'success') {
             return <Redirect to="/blog" />;
